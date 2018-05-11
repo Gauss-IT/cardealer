@@ -7,19 +7,23 @@
         <!-- Form -->
         <form id="contactForm">
           <div class="row">
-            <div class="text-center">
-              <h2>You are using Free Version</h2>
-              <h4>Please, purchase full version to get all features and pages</h4><br>
-              <b>Including:</b>
-              <p>- 2 Homepage Variations</p>
-              <p>- All Elements and Features</p>
-              <p>- Documentation File</p>
-              <p>- Quick Support</p>
-              <p>- Permission to Use in Commercial Projects</p>
-              <p>- Footer Credit Removal</p>
-              <p>- SASS Files</p>
-              <br>
-              <a href="http://rebrand.ly/basic-purchase" target="_blank" class="btn btn-common btn-lg">Purchase Now</a>
+            <div class="text-center col-xs-12 col-sm-12 col-md-6 col-lg-6">
+              <div class="form-group">
+                <input type="text" name="name" placeholder="name" class="form-control">
+              </div>
+              <div class="form-group">
+                {{-- <label for="email">Email</label> --}}
+                <input type="email" name="email" placeholder="email" class="form-control">
+              </div>
+              <div class="form-group">
+                {{-- <label for="message">Message</label> --}}
+                <textarea name="message" id="message" cols="30" rows="10"
+                  class="form-control" placeholder="Your message here"></textarea>
+              </div>
+              <a href="#" target="_blank" class="btn btn-common btn-lg">Send</a>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5929.180400121922!2d21.421581313671993!3d42.00906964566575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1smk!2smk!4v1526065945725" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
           </div>
         </form>

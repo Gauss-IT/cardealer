@@ -11,18 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/cars/{name}', function() {
-  return view('cars/show')->withName('name');
-});
+Route::get('/', 'CarController@root_index')->name('root.index');
 
-Route::get('/cars', function() {
-  return view('cars/index');
-});
+Route::get('/cars/{id}', 'CarController@show')->name('cars.show');
+
+Route::get('/cars', 'CarController@index')->name('cars.index');
 
 Route::get('/admin', function() {
   return view('admin/index');
 })->name('admin.index');
+
+Route::post('/cars', 'CarController@store')->name('cars.store');
