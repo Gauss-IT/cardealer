@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Car;
 use Image;
 use File;
+use Session;
+use App\Brand;
 
 class CarController extends Controller
 {
@@ -23,6 +25,11 @@ class CarController extends Controller
     public function root_index() {
       $cars = Car::all();
       return view('welcome')->with(compact('cars'));
+    }
+
+    public function list() {
+      $cars = Car::all();
+      return view('admin.list-cars')->with(compact('cars'));
     }
 
     /**
@@ -58,7 +65,12 @@ class CarController extends Controller
         $car = new Car();
         $car->motorCapacity = $request->motorCapacity;
         $car->power = $request->power;
+        $car->brand_id = $request->brand;
         $car->model = $request->model;
+        if($request->topspeed)
+          $car->topspeed = $request->topspeed;
+        if($request->acceleration)
+          $car->acceleration = $request->acceleration;
         $car->bodytype = $request->bodyType;
         $car->gearboxtype = $request->gearboxType;
         $car->co2emmision = $request->co2emmision;
@@ -78,18 +90,24 @@ class CarController extends Controller
         $gallery_count = 0;
         $gallery_string = '';
 
-        foreach($request->file as $gi){
-          $filename = $gallery_count++ . time() . '.' . $gi->getClientOriginalExtension();
-          File::exists(public_path() . '/images/cars/' . $car->id . '/') or
-            File::makeDirectory(public_path() . '//images/cars/' . $car->id . '/', 0777, true);
-          $location = public_path('images/cars/' . $car->id . '/' . $filename);
-          Image::make($gi)->fit(800, 500)->save($location);
-          $gallery_string .= $filename . ';';
+        if($request->file){
+          foreach($request->file as $gi){
+            var_dump($gi);
+            $filename = $gallery_count++ . time() . '.' . $gi->getClientOriginalExtension();
+            File::exists(public_path() . '/images/cars/' . $car->id . '/') or
+              File::makeDirectory(public_path() . '/images/cars/' . $car->id . '/', 0777, true);
+            $location = public_path('images/cars/' . $car->id . '/' . $filename);
+            Image::make($gi)->fit(800, 500)->save($location);
+            $gallery_string .= $filename . ';';
+          }
         }
 
         $car->galleryimages = $gallery_string;
 
         $car->save();
+        Session::flash('success', 'This car was successfully saved.');
+
+        return redirect()->route('admin.index');
     }
 
     /**
@@ -101,7 +119,10 @@ class CarController extends Controller
     public function show($id)
     {
         $car = Car::find($id);
-        return view('cars.show')->with(compact('car'));
+        $galleryimages = [];
+        if(isset($car->galleryimages))
+          $galleryimages = explode(';', $car->galleryimages);
+        return view('cars.show')->with(compact('car', 'galleryimages'));
     }
 
     /**
@@ -112,7 +133,9 @@ class CarController extends Controller
      */
     public function edit($id)
     {
-        //
+        $car = Car::find($id);
+        $brands = Brand::all();
+        return view('admin.car-edit')->with(compact('car', 'brands'));
     }
 
     /**
@@ -124,7 +147,63 @@ class CarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $this->validate($request, [
+        'motorCapacity' => 'required',
+        'power' => 'required',
+        'model' => 'required',
+        'bodyType' => 'required',
+        'gearboxType' => 'required',
+        'co2emmision' => 'required',
+        'location' => 'required',
+        'color' => 'required',
+        'featuredImage' => 'sometimes|image'
+      ]);
+
+      $car = Car::find($id);
+      $car->motorCapacity = $request->motorCapacity;
+      $car->power = $request->power;
+      $car->brand_id = $request->brand;
+      if($request->topspeed)
+        $car->topspeed = $request->topspeed;
+      if($request->acceleration)
+        $car->acceleration = $request->acceleration;
+      $car->model = $request->model;
+      $car->bodytype = $request->bodyType;
+      $car->gearboxtype = $request->gearboxType;
+      $car->co2emmision = $request->co2emmision;
+      $car->location = $request->location;
+      $car->color = $request->color;
+      if($request->hasFile('featuredImage')){
+        $image = $request->file('featuredImage');
+        $filename = time() . '.' . $image->getClientOriginalExtension();
+        File::exists(public_path() . '/images/cars') or File::makeDirectory(public_path() . '/images/cars', 0777, true);
+        $location = public_path('images/cars/' . $filename);
+        Image::make($image)->fit(800, 500)->save($location);
+
+        $car->featuredimage = $filename;
+      }
+
+      // $gallery_images = $request->file('file');
+      $gallery_count = 0;
+      $gallery_string = '';
+
+      if($request->file){
+        foreach($request->file as $gi){
+          $filename = $gallery_count++ . time() . '.' . $gi->getClientOriginalExtension();
+          File::exists(public_path() . '/images/cars/' . $car->id . '/') or
+            File::makeDirectory(public_path() . '//images/cars/' . $car->id . '/', 0777, true);
+          $location = public_path('images/cars/' . $car->id . '/' . $filename);
+          Image::make($gi)->fit(800, 500)->save($location);
+          $gallery_string .= $filename . ';';
+        }
+      }
+
+      $car->galleryimages = $gallery_string;
+
+      $car->save();
+      Session::flash('success', 'This car was successfully updated.');
+
+      return redirect()->route('cars.list');
     }
 
     /**

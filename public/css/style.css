@@ -4,8 +4,22 @@
 }
 
 #contactForm input, #contactForm textarea {
-  color: rgba(200, 200, 200, 0.7);
+  color: rgba(10, 10, 10, 0.7);
   font-size: 1.2em;
   background-color: rgba(255,255,255,0.6);
   width: 100%;
+}
+
+.light-title {
+  color: lightgrey;
+}
+
+.img-about-out {
+  max-width:40% !important;
+  right: 10% !important;
+  top: 10% !important;
+}
+
+.img-about-out img {
+  max-width: 100%;
 }

@@ -13,10 +13,10 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto w-100 justify-content-end">
           <li class="nav-item">
-            <a class="nav-link" href="#hero-area">Home</a>
+            <a class="nav-link" href="{{url('/')}}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#about">About Us</a>
+            <a class="nav-link" href="{{url('/cars')}}">Cars</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#services">Services</a>

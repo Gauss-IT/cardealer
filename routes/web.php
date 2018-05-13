@@ -17,12 +17,22 @@
 
 Route::get('/', 'CarController@root_index')->name('root.index');
 
+Route::get('/admin/cars/all', 'CarController@list')->name('cars.list');
+
+Route::get('/admin/brands', 'BrandsController@index')->name('brands.index');
+
+Route::post('/admin/brands', 'BrandsController@store')->name('brands.store');
+
+Route::post('/admin/brands/{id}', 'BrandsController@update')->name('brands.update');
+
 Route::get('/cars/{id}', 'CarController@show')->name('cars.show');
 
 Route::get('/cars', 'CarController@index')->name('cars.index');
 
-Route::get('/admin', function() {
-  return view('admin/index');
-})->name('admin.index');
+Route::get('/cars/edit/{id}', 'CarController@edit')->name('cars.edit');
+
+Route::post('/cars/edit/{id}', 'CarController@update')->name('cars.update');
+
+Route::get('/admin', 'AdminController@index')->name('admin.index');
 
 Route::post('/cars', 'CarController@store')->name('cars.store');
