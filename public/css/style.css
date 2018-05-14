@@ -1,6 +1,14 @@
 .car-card {
   margin-top: 2%;
   margin-bottom: 2%;
+  color: #333;
+  background-color: rgba(200,200,200,0.9);
+}
+
+.car-card:hover {
+  color: rgba(230,230,230,1) !important;
+  text-decoration: underline !important;
+  background-color: rgba(50,50,50,0.9);
 }
 
 #contactForm input, #contactForm textarea {

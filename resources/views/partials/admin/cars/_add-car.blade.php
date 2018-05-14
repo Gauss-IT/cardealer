@@ -79,8 +79,21 @@
           <label for="file">Gallery Images</label>
           <input type="file" id="file" name="file[]" multiple />
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="row">
+          <div class="col-sm-6 col-md-6 col-lg-6">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+        </form>
+        @if(isset($car))
+          <form action="{{route('cars.delete', $car->id)}}" method="post">
+            {{csrf_field()}}
+            <input type="submit" class="btn btn-danger mt-5 mt-sm-0" value="Delete">
+          </form>
+        @endif
       </div>
     </div>
+
+    </div>
   </div>
-</form>
+</div>

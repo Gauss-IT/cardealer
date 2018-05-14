@@ -9,6 +9,7 @@
       <tr>
         <th scope="col">Brand Name</th>
         <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -22,7 +23,13 @@
                 {{csrf_field()}}
                 <input type="submit" class="btn btn-primary btn-sm" value="Change">
             </td>
-        </form>
+          </form>
+          <td>
+            <form action="{{route('brands.delete', $b->id)}}" method="post">
+              {{csrf_field()}}
+              <input type="submit" class="btn btn-danger btn-sm" value="Delete">
+            </form>
+          </td>
         </tr>
       @endforeach
     </tbody>

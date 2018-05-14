@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Brand;
+use Session;
 
 class BrandsController extends Controller
 {
@@ -97,6 +98,9 @@ class BrandsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $b=Brand::find($id);
+        $b->delete();
+        Session::flash('success', 'Brand was deleted.');
+        return redirect('/admin/brands');
     }
 }

@@ -36,3 +36,11 @@ Route::post('/cars/edit/{id}', 'CarController@update')->name('cars.update');
 Route::get('/admin', 'AdminController@index')->name('admin.index');
 
 Route::post('/cars', 'CarController@store')->name('cars.store');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/admin/cars/delete/{id}', 'CarController@destroy')->name('cars.delete');
+
+Route::post('/admin/brands/delete/{id}', 'BrandsController@destroy')->name('brands.delete');

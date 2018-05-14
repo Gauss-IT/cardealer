@@ -11,19 +11,21 @@
         <?php $first = false; ?>
         <div class="card-deck">
       @endif
-      <div class="card car-card">
-        <img src="{{asset('images/cars/' . $car->featuredimage)}}" alt="{{$car->model}}" class="card-img-top">
-        <div class="card-body">
-          <h1 class="card-title">{{$car->model}}</h1>
-          <p class="card-text">Motor Capacity: {{$car->motorcapacity}}</p>
-          <p class="card-text">Power: {{$car->power}}</p>
-          <p class="card-text">Body Type: {{$car->bodytype}}</p>
-          <p class="card-text">Gearbox Type: {{$car->gearboxtype}}</p>
-          <p class="card-text">CO2 Emmision: {{$car->co2emmision}}</p>
-          <p class="card-text">Location: {{$car->location}}</p>
-          <p class="card-text">Color: {{$car->color}}</p>
+        <div class="card car-card">
+          <a class="card car-card" style="padding:0;" href="{{route('cars.show', $car->id)}}">
+          <img src="{{asset('images/cars/' . $car->featuredimage)}}" alt="{{$car->model}}" class="card-img-top">
+            <div class="card-body">
+              <h1 class="card-title">{{$car->model}}</h1>
+              <p class="card-text">Motor Capacity: {{$car->motorcapacity}}</p>
+              <p class="card-text">Power: {{$car->power}}</p>
+              <p class="card-text">Body Type: {{$car->bodytype}}</p>
+              <p class="card-text">Gearbox Type: {{$car->gearboxtype}}</p>
+              <p class="card-text">CO2 Emmision: {{$car->co2emmision}}</p>
+              <p class="card-text">Location: {{$car->location}}</p>
+              <p class="card-text">Color: {{$car->color}}</p>
+            </div>
+          </a>
         </div>
-      </div>
       <?php $car_count++; ?>
     @endforeach
     {{-- <div class="card-deck">

@@ -11,6 +11,11 @@ use App\Brand;
 
 class CarController extends Controller
 {
+
+    public function __constructor() {
+      $this->middleware('auth', ['only' => ['list', 'store', 'create', 'edit', 'update', 'destroy']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -214,6 +219,9 @@ class CarController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $c = Car::find($id);
+        $c->delete();
+        Session::flash('success', 'This car was successfully deleted.');
+        return redirect('/admin');
     }
 }
