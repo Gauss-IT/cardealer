@@ -1,15 +1,13 @@
 @include('partials._head')
+
+@include('partials._header')
+
 @include('partials._nav')
-@include('partials._messages')
 
 @yield('content')
 
-<!-- Footer Section Start -->
 @include('partials._footer')
-<!-- Footer area End -->
 
-<!-- Copyright Start  -->
-@include('partials._copyright')
-<!-- Copyright End -->
+@include('partials._back_to_top')
 
-@include('partials._end')
+@include('partials._scripts')

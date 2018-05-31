@@ -1,24 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="keywords" content="Bootstrap, Landing page, Template, Registration, Landing">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="author" content="xrrsto">
-    <title>Car Salon</title>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="keywords" content="HTML5 Template" />
+<meta name="description" content="Car Dealer - The Best Car Dealer Automotive Responsive HTML5 Template" />
+<meta name="author" content="potenzaglobalsolutions.com" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>Arventa GMBH</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/simple-line-icons.css')}}">
-    <link rel="stylesheet" href="{{asset('css/slicknav.css')}}">
-    <link rel="stylesheet" href="{{asset('css/owl.carousel.css')}}">
-    <link rel="stylesheet" href="{{asset('css/owl.theme.css')}}">
-    <link rel="stylesheet" href="{{asset('css/animate.css')}}">
-    <link rel="stylesheet" href="{{asset('css/main.css')}}">
-    <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-  </head>
-  <body>
+<!-- Favicon -->
+<link rel="shortcut icon" href="{{asset('images/favicon.ico')}}" />
+
+<!-- bootstrap -->
+<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}" />
+
+<!-- flaticon -->
+<link rel="stylesheet" type="text/css" href="{{asset('css/flaticon.css')}}" />
+
+<!-- mega menu -->
+<link rel="stylesheet" type="text/css" href="{{asset('css/mega-menu/mega_menu.css')}}" />
+
+<!-- font awesome -->
+<link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.min.css')}}" />
+
+<!-- owl-carousel -->
+<link rel="stylesheet" type="text/css" href="{{asset('css/owl-carousel/owl.carousel.css')}}" />
+
+<!-- magnific-popup -->
+<link rel="stylesheet" type="text/css" href="{{asset('css/magnific-popup/magnific-popup.css')}}" />
+
+<!-- revolution -->
+<link rel="stylesheet" type="text/css" href="{{asset('revolution/css/settings.css')}}" />
+
+<!-- main style -->
+<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}" />
+
+<!-- responsive -->
+<link rel="stylesheet" type="text/css" href="{{asset('css/responsive.css')}}" />
+
+</head>
