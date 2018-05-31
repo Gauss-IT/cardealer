@@ -2,19 +2,15 @@
 
 @section('content')
 
-  <!--=================================
-  product-listing  -->
-
   <section class="product-listing page-section-ptb">
-   <div class="container">
-    <div class="row">
-     <div class="col-lg-3 col-md-4">
+    <div class="container">
+      <div class="row">
+       <div class="col-lg-3 col-md-4">
        <div class="listing-sidebar">
         <div class="widget">
            <div class="widget-search">
              <h5>Advanced Search</h5>
-             <ul class="list-style
-             -none">
+             <ul class="list-style-none">
                <li><i class="fa fa-star"> </i> Results Found <span class="float-right">(39)</span></li>
                <li><i class="fa fa-shopping-cart"> </i> Compare Vehicles <span class="float-right">(10)</span></li>
              </ul>
@@ -310,7 +306,7 @@
          </div>
         </div>
        </div>
-       <div class="col-lg-9 col-md-8">
+        <div class="col-lg-9 col-md-8">
          <div class="sorting-options-main">
           <div class="row">
           <div class="col-lg-4">
@@ -342,13 +338,13 @@
            </div>
           </div>
           <div class="row sorting-options">
-            <div class="col-lg-5">
+            <div class="col-md-5">
              <div class="change-view-button">
-               <a class="active" href="{{route('cars.index')}}"> <i class="fa fa-th"></i> </a>
-               <a href="{{route('cars.index2')}}"> <i class="fa fa-list-ul"></i> </a>
+               <a href="{{route('cars.index')}}"> <i class="fa fa-th"></i> </a>
+               <a class="active" href="{{route('cars.index2')}}"> <i class="fa fa-list-ul"></i> </a>
              </div>
             </div>
-           <div class="col-lg-3 text-right">
+           <div class="col-md-3 text-right">
              <div class="selected-box">
               <select>
                 <option>Show  </option>
@@ -360,7 +356,7 @@
               </select>
             </div>
            </div>
-           <div class="col-lg-4 text-right">
+           <div class="col-md-4 text-right">
               <div class="selected-box">
                <select>
                 <option>Sort by </option>
@@ -371,51 +367,15 @@
                  <option>In stock</option>
                </select>
              </div>
-           </div>
           </div>
-         </div>
-          <div class="row">
-            <div class="col-lg-4">
-              <div class="car-item gray-bg text-center">
-               <div class="car-image">
-                 <img class="img-fluid" src="images/car/01.jpg" alt="">
-                 <div class="car-overlay-banner">
-                  <ul>
-                    <li><a href="#"><i class="fa fa-link"></i></a></li>
-                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                   </ul>
-                 </div>
-               </div>
-               <div class="car-list">
-                 <ul class="list-inline">
-                   <li><i class="fa fa-registered"></i> 2016</li>
-                   <li><i class="fa fa-cog"></i> Manual </li>
-                   <li><i class="fa fa-shopping-cart"></i> 6,000 mi</li>
-                 </ul>
-              </div>
-               <div class="car-content">
-                <div class="star">
-                 <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star-o orange-color"></i>
-                 </div>
-                 <a href="#">Acura Rsx</a>
-                 <div class="separator"></div>
-                 <div class="price">
-                   <span class="old-price">$35,568</span>
-                   <span class="new-price">$32,698 </span>
-                 </div>
-               </div>
-             </div>
-             </div>
-             <div class="col-lg-4">
-              {{-- @foreach($cars as $c) --}}
+          </div>
+          </div>
+          <div class="car-grid">
+             <div class="row">
+              <div class="col-lg-4 col-md-12">
                 <div class="car-item gray-bg text-center">
                  <div class="car-image">
-                   <img class="img-fluid" src="images/car/02.jpg" alt="">
-                   {{-- <img class="img-fluid" src="{{$c->featuredimage}}" alt=""> --}}
+                   <img class="img-fluid" src="images/car/01.jpg" alt="">
                    <div class="car-overlay-banner">
                     <ul>
                       <li><a href="#"><i class="fa fa-link"></i></a></li>
@@ -423,279 +383,142 @@
                      </ul>
                    </div>
                  </div>
-                 <div class="car-list">
-                   <ul class="list-inline">
-                     <li><i class="fa fa-registered"></i> 2016</li>
-                     <li><i class="fa fa-cog"></i> Manual </li>
-                     <li><i class="fa fa-shopping-cart"></i> 6,000 mi</li>
-                   </ul>
                 </div>
-                 <div class="car-content">
-                  <div class="star">
-                   <i class="fa fa-star orange-color"></i>
-                    <i class="fa fa-star orange-color"></i>
-                    <i class="fa fa-star orange-color"></i>
-                    <i class="fa fa-star orange-color"></i>
-                    <i class="fa fa-star-o orange-color"></i>
+               </div>
+                <div class="col-lg-8 col-md-12">
+                  <div class="car-details">
+                  <div class="car-title">
+                   <a href="#">Acura Rsx</a>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero numquam repellendus non voluptate. Harum blanditiis ullam deleniti.</p>
+                    </div>
+                    <div class="price">
+                         <span class="old-price">$35,568</span>
+                         <span class="new-price">$32,698 </span>
+                         <a class="button red float-right" href="#">Details</a>
+                       </div>
+                     <div class="car-list">
+                       <ul class="list-inline">
+                         <li><i class="fa fa-registered"></i> 2016</li>
+                         <li><i class="fa fa-cog"></i> Manual </li>
+                         <li><i class="fa fa-shopping-cart"></i> 6,000 mi</li>
+                       </ul>
+                     </div>
+                    </div>
+                  </div>
+                 </div>
+               </div>
+               <div class="car-grid">
+             <div class="row">
+              <div class="col-lg-4 col-md-12">
+                <div class="car-item gray-bg text-center">
+                 <div class="car-image">
+                   <img class="img-fluid" src="images/car/02.jpg" alt="">
+                   <div class="car-overlay-banner">
+                    <ul>
+                      <li><a href="#"><i class="fa fa-link"></i></a></li>
+                      <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                     </ul>
                    </div>
+                 </div>
+                </div>
+               </div>
+                <div class="col-lg-8 col-md-12">
+                  <div class="car-details">
+                  <div class="car-title">
                    <a href="#">Lexus GS 450h</a>
-                   <div class="separator"></div>
-                   <div class="price">
-                     <span class="old-price">$35,568</span>
-                     <span class="new-price">$32,698 </span>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero numquam repellendus non voluptate. Harum blanditiis ullam deleniti.</p>
+                    </div>
+                    <div class="price">
+                         <span class="old-price">$35,568</span>
+                         <span class="new-price">$32,698 </span>
+                         <a class="button red float-right" href="#">Details</a>
+                       </div>
+                     <div class="car-list">
+                       <ul class="list-inline">
+                         <li><i class="fa fa-registered"></i> 2016</li>
+                         <li><i class="fa fa-cog"></i> Manual </li>
+                         <li><i class="fa fa-shopping-cart"></i> 6,000 mi</li>
+                       </ul>
+                     </div>
+                    </div>
+                  </div>
+                 </div>
+               </div>
+               <div class="car-grid">
+             <div class="row">
+              <div class="col-lg-4 col-md-12">
+                <div class="car-item gray-bg text-center">
+                 <div class="car-image">
+                   <img class="img-fluid" src="images/car/03.jpg" alt="">
+                   <div class="car-overlay-banner">
+                    <ul>
+                      <li><a href="#"><i class="fa fa-link"></i></a></li>
+                      <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                     </ul>
                    </div>
                  </div>
+                </div>
                </div>
-             {{-- @endforeach --}}
-
-             </div>
-             <div class="col-lg-4">
-              <div class="car-item gray-bg text-center">
-               <div class="car-image">
-                 <img class="img-fluid" src="images/car/03.jpg" alt="">
-                 <div class="car-overlay-banner">
-                  <ul>
-                    <li><a href="#"><i class="fa fa-link"></i></a></li>
-                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                   </ul>
-                 </div>
-               </div>
-               <div class="car-list">
-                 <ul class="list-inline">
-                   <li><i class="fa fa-registered"></i> 2016</li>
-                   <li><i class="fa fa-cog"></i> Manual </li>
-                   <li><i class="fa fa-shopping-cart"></i> 6,000 mi</li>
-                 </ul>
-              </div>
-               <div class="car-content">
-                <div class="star">
-                 <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star-o orange-color"></i>
-                 </div>
-                 <a href="#">GTA 5 Lowriders DLC</a>
-                 <div class="separator"></div>
-                 <div class="price">
-                   <span class="old-price">$35,568</span>
-                   <span class="new-price">$32,698 </span>
+                <div class="col-lg-8 col-md-12">
+                  <div class="car-details">
+                  <div class="car-title">
+                   <a href="#">GTA 5 Lowriders DLC</a>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero numquam repellendus non voluptate. Harum blanditiis ullam deleniti.</p>
+                    </div>
+                    <div class="price">
+                         <span class="old-price">$35,568</span>
+                         <span class="new-price">$32,698 </span>
+                         <a class="button red float-right" href="#">Details</a>
+                       </div>
+                     <div class="car-list">
+                       <ul class="list-inline">
+                         <li><i class="fa fa-registered"></i> 2016</li>
+                         <li><i class="fa fa-cog"></i> Manual </li>
+                         <li><i class="fa fa-shopping-cart"></i> 6,000 mi</li>
+                       </ul>
+                     </div>
+                    </div>
+                  </div>
                  </div>
                </div>
-             </div>
-             </div>
-             <div class="col-lg-4">
-              <div class="car-item gray-bg text-center">
-               <div class="car-image">
-                 <img class="img-fluid" src="images/car/04.jpg" alt="">
-                 <div class="car-overlay-banner">
-                  <ul>
-                    <li><a href="#"><i class="fa fa-link"></i></a></li>
-                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                   </ul>
+               <div class="car-grid">
+             <div class="row">
+              <div class="col-lg-4 col-md-12">
+                <div class="car-item gray-bg text-center">
+                 <div class="car-image">
+                   <img class="img-fluid" src="images/car/04.jpg" alt="">
+                   <div class="car-overlay-banner">
+                    <ul>
+                      <li><a href="#"><i class="fa fa-link"></i></a></li>
+                      <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                     </ul>
+                   </div>
+                 </div>
+                </div>
+               </div>
+                <div class="col-lg-8 col-md-12">
+                  <div class="car-details">
+                  <div class="car-title">
+                   <a href="#">Toyota avalon hybrid </a>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero numquam repellendus non voluptate. Harum blanditiis ullam deleniti.</p>
+                    </div>
+                    <div class="price">
+                         <span class="old-price">$35,568</span>
+                         <span class="new-price">$32,698 </span>
+                         <a class="button red float-right" href="#">Details</a>
+                       </div>
+                     <div class="car-list">
+                       <ul class="list-inline">
+                         <li><i class="fa fa-registered"></i> 2016</li>
+                         <li><i class="fa fa-cog"></i> Manual </li>
+                         <li><i class="fa fa-shopping-cart"></i> 6,000 mi</li>
+                       </ul>
+                     </div>
+                    </div>
+                  </div>
                  </div>
                </div>
-               <div class="car-list">
-                 <ul class="list-inline">
-                   <li><i class="fa fa-registered"></i> 2016</li>
-                   <li><i class="fa fa-cog"></i> Manual </li>
-                   <li><i class="fa fa-shopping-cart"></i> 6,000 mi</li>
-                 </ul>
-              </div>
-               <div class="car-content">
-                <div class="star">
-                 <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star-o orange-color"></i>
-                 </div>
-                 <a href="#">Toyota avalon hybrid </a>
-                 <div class="separator"></div>
-                 <div class="price">
-                   <span class="old-price">$35,568</span>
-                   <span class="new-price">$32,698 </span>
-                 </div>
-               </div>
-             </div>
-             </div>
-             <div class="col-lg-4">
-              <div class="car-item gray-bg text-center">
-               <div class="car-image">
-                 <img class="img-fluid" src="images/car/05.jpg" alt="">
-                 <div class="car-overlay-banner">
-                  <ul>
-                    <li><a href="#"><i class="fa fa-link"></i></a></li>
-                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                   </ul>
-                 </div>
-               </div>
-               <div class="car-list">
-                 <ul class="list-inline">
-                   <li><i class="fa fa-registered"></i> 2016</li>
-                   <li><i class="fa fa-cog"></i> Manual </li>
-                   <li><i class="fa fa-shopping-cart"></i> 6,000 mi</li>
-                 </ul>
-              </div>
-               <div class="car-content">
-                <div class="star">
-                 <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star-o orange-color"></i>
-                 </div>
-                 <a href="#">Hyundai santa fe sport </a>
-                 <div class="separator"></div>
-                 <div class="price">
-                   <span class="old-price">$35,568</span>
-                   <span class="new-price">$32,698 </span>
-                 </div>
-               </div>
-             </div>
-             </div>
-             <div class="col-lg-4">
-              <div class="car-item gray-bg text-center">
-               <div class="car-image">
-                 <img class="img-fluid" src="images/car/06.jpg" alt="">
-                 <div class="car-overlay-banner">
-                  <ul>
-                    <li><a href="#"><i class="fa fa-link"></i></a></li>
-                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                   </ul>
-                 </div>
-               </div>
-               <div class="car-list">
-                 <ul class="list-inline">
-                   <li><i class="fa fa-registered"></i> 2016</li>
-                   <li><i class="fa fa-cog"></i> Manual </li>
-                   <li><i class="fa fa-shopping-cart"></i> 6,000 mi</li>
-                 </ul>
-              </div>
-               <div class="car-content">
-                <div class="star">
-                 <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star-o orange-color"></i>
-                 </div>
-                 <a href="#">Lexus is f</a>
-                 <div class="separator"></div>
-                 <div class="price">
-                   <span class="old-price">$35,568</span>
-                   <span class="new-price">$32,698 </span>
-                 </div>
-               </div>
-             </div>
-             </div>
-             <div class="col-lg-4">
-              <div class="car-item gray-bg text-center">
-               <div class="car-image">
-                 <img class="img-fluid" src="images/car/01.jpg" alt="">
-                 <div class="car-overlay-banner">
-                  <ul>
-                    <li><a href="#"><i class="fa fa-link"></i></a></li>
-                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                   </ul>
-                 </div>
-               </div>
-               <div class="car-list">
-                 <ul class="list-inline">
-                   <li><i class="fa fa-registered"></i> 2016</li>
-                   <li><i class="fa fa-cog"></i> Manual </li>
-                   <li><i class="fa fa-shopping-cart"></i> 6,000 mi</li>
-                 </ul>
-              </div>
-               <div class="car-content">
-                <div class="star">
-                 <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star-o orange-color"></i>
-                 </div>
-                 <a href="#">Acura Rsx</a>
-                 <div class="separator"></div>
-                 <div class="price">
-                   <span class="old-price">$35,568</span>
-                   <span class="new-price">$32,698 </span>
-                 </div>
-               </div>
-             </div>
-             </div>
-             <div class="col-lg-4">
-              <div class="car-item gray-bg text-center">
-               <div class="car-image">
-                 <img class="img-fluid" src="images/car/03.jpg" alt="">
-                 <div class="car-overlay-banner">
-                  <ul>
-                    <li><a href="#"><i class="fa fa-link"></i></a></li>
-                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                   </ul>
-                 </div>
-               </div>
-               <div class="car-list">
-                 <ul class="list-inline">
-                   <li><i class="fa fa-registered"></i> 2016</li>
-                   <li><i class="fa fa-cog"></i> Manual </li>
-                   <li><i class="fa fa-shopping-cart"></i> 6,000 mi</li>
-                 </ul>
-              </div>
-               <div class="car-content">
-                <div class="star">
-                 <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star-o orange-color"></i>
-                 </div>
-                 <a href="#">GTA 5 Lowriders DLC</a>
-                 <div class="separator"></div>
-                 <div class="price">
-                   <span class="old-price">$35,568</span>
-                   <span class="new-price">$32,698 </span>
-                 </div>
-               </div>
-             </div>
-             </div>
-             <div class="col-lg-4">
-              <div class="car-item gray-bg text-center">
-               <div class="car-image">
-                 <img class="img-fluid" src="images/car/02.jpg" alt="">
-                 <div class="car-overlay-banner">
-                  <ul>
-                    <li><a href="#"><i class="fa fa-link"></i></a></li>
-                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                   </ul>
-                 </div>
-               </div>
-               <div class="car-list">
-                 <ul class="list-inline">
-                   <li><i class="fa fa-registered"></i> 2016</li>
-                   <li><i class="fa fa-cog"></i> Manual </li>
-                   <li><i class="fa fa-shopping-cart"></i> 6,000 mi</li>
-                 </ul>
-              </div>
-               <div class="car-content">
-                <div class="star">
-                 <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star-o orange-color"></i>
-                 </div>
-                 <a href="#"> Lexus GS 450h</a>
-                 <div class="separator"></div>
-                 <div class="price">
-                   <span class="old-price">$35,568</span>
-                   <span class="new-price">$32,698 </span>
-                 </div>
-               </div>
-             </div>
-             </div>
-            </div>
-            <div class="pagination-nav d-flex justify-content-center">
+             <div class="pagination-nav d-flex justify-content-center">
                  <ul class="pagination">
                    <li><a href="#">«</a></li>
                    <li class="active"><a href="#">1</a></li>
@@ -706,13 +529,10 @@
                    <li><a href="#">»</a></li>
                  </ul>
             </div>
-         </div>
-       </div>
-    </div>
+            </div>
+          </div>
+        </div>
   </section>
-
-  <!--=================================
-  product-listing  -->
 
 
 @endsection

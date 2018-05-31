@@ -28,6 +28,8 @@ Route::post('/admin/brands/{id}', 'BrandsController@update')->name('brands.updat
 Route::get('/cars/{id}', 'CarController@show')->name('cars.show');
 
 Route::get('/cars', 'CarController@index')->name('cars.index');
+Route::get('/carsL2', 'CarController@indexL2')->name('cars.index2');
+
 
 Route::get('/cars/edit/{id}', 'CarController@edit')->name('cars.edit');
 

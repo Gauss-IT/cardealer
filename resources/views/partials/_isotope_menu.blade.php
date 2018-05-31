@@ -198,9 +198,9 @@
          </div>
          <div class="grid-item mercedes hyundai">
            <div class="car-item-3">
-           <img class="img-fluid center-block" src="images/car/02.jpg" alt="">
+           <img class="img-fluid center-block" src="{{asset('images/car/02.jpg')}}" alt="">
            <div class="car-popup">
-             <a class="popup-img" href="images/car/02.jpg"><i class="fa fa-plus"></i></a>
+             <a class="popup-img" href="{{asset('images/car/02.jpg')}}"><i class="fa fa-plus"></i></a>
            </div>
            <div class="car-overlay text-center">
              <a class="link" href="#">Toyota avalon hybrid </a>
