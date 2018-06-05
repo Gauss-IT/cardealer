@@ -375,47 +375,48 @@
           </div>
          </div>
           <div class="row">
-            <div class="col-lg-4">
-              <div class="car-item gray-bg text-center">
-               <div class="car-image">
-                 <img class="img-fluid" src="images/car/01.jpg" alt="">
-                 <div class="car-overlay-banner">
-                  <ul>
-                    <li><a href="#"><i class="fa fa-link"></i></a></li>
-                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+            @foreach($cars as $c)
+              <div class="col-lg-4">
+               <div class="car-item gray-bg text-center">
+                 <div class="car-image">
+                   <img class="img-fluid" src="{{asset('images/cars/' . $c->featuredimage)}}" alt="">
+                   <div class="car-overlay-banner">
+                    <ul>
+                      <li><a href="#"><i class="fa fa-link"></i></a></li>
+                      <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                     </ul>
+                   </div>
+                 </div>
+                 <div class="car-list">
+                   <ul class="list-inline">
+                     <li><i class="fa fa-registered"></i> 2016</li>
+                     <li><i class="fa fa-cog"></i> Manual </li>
+                     <li><i class="fa fa-shopping-cart"></i> 6,000 mi</li>
                    </ul>
+                </div>
+                 <div class="car-content">
+                  <div class="star">
+                   <i class="fa fa-star orange-color"></i>
+                    <i class="fa fa-star orange-color"></i>
+                    <i class="fa fa-star orange-color"></i>
+                    <i class="fa fa-star orange-color"></i>
+                    <i class="fa fa-star-o orange-color"></i>
+                   </div>
+                   <a href="#">{{$c->brand->name}} {{$c->model}}</a>
+                   <div class="separator"></div>
+                   <div class="price">
+                     <span class="old-price">$35,568</span>
+                     <span class="new-price">$32,698 </span>
+                   </div>
                  </div>
-               </div>
-               <div class="car-list">
-                 <ul class="list-inline">
-                   <li><i class="fa fa-registered"></i> 2016</li>
-                   <li><i class="fa fa-cog"></i> Manual </li>
-                   <li><i class="fa fa-shopping-cart"></i> 6,000 mi</li>
-                 </ul>
-              </div>
-               <div class="car-content">
-                <div class="star">
-                 <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star orange-color"></i>
-                  <i class="fa fa-star-o orange-color"></i>
-                 </div>
-                 <a href="#">Acura Rsx</a>
-                 <div class="separator"></div>
-                 <div class="price">
-                   <span class="old-price">$35,568</span>
-                   <span class="new-price">$32,698 </span>
-                 </div>
-               </div>
+               </div> <!-- /car-item -->
              </div>
-             </div>
-             <div class="col-lg-4">
-              {{-- @foreach($cars as $c) --}}
+           @endforeach
+             {{-- <div class="col-lg-4">
                 <div class="car-item gray-bg text-center">
                  <div class="car-image">
                    <img class="img-fluid" src="images/car/02.jpg" alt="">
-                   {{-- <img class="img-fluid" src="{{$c->featuredimage}}" alt=""> --}}
+                   {{-- <img class="img-fluid" src="{{$c->featuredimage}}" alt="">
                    <div class="car-overlay-banner">
                     <ul>
                       <li><a href="#"><i class="fa fa-link"></i></a></li>
@@ -445,11 +446,11 @@
                      <span class="new-price">$32,698 </span>
                    </div>
                  </div>
-               </div>
-             {{-- @endforeach --}}
+               </div> <!-- /car-item -->
+             {{-- @endforeach
 
-             </div>
-             <div class="col-lg-4">
+             </div> --}}
+             {{-- <div class="col-lg-4">
               <div class="car-item gray-bg text-center">
                <div class="car-image">
                  <img class="img-fluid" src="images/car/03.jpg" alt="">
@@ -483,8 +484,8 @@
                  </div>
                </div>
              </div>
-             </div>
-             <div class="col-lg-4">
+             </div> --}}
+             {{-- <div class="col-lg-4">
               <div class="car-item gray-bg text-center">
                <div class="car-image">
                  <img class="img-fluid" src="images/car/04.jpg" alt="">
@@ -518,8 +519,8 @@
                  </div>
                </div>
              </div>
-             </div>
-             <div class="col-lg-4">
+             </div> --}}
+             {{-- <div class="col-lg-4">
               <div class="car-item gray-bg text-center">
                <div class="car-image">
                  <img class="img-fluid" src="images/car/05.jpg" alt="">
@@ -552,9 +553,9 @@
                    <span class="new-price">$32,698 </span>
                  </div>
                </div>
-             </div>
-             </div>
-             <div class="col-lg-4">
+             </div> --}}
+             {{-- </div> --}}
+             {{-- <div class="col-lg-4">
               <div class="car-item gray-bg text-center">
                <div class="car-image">
                  <img class="img-fluid" src="images/car/06.jpg" alt="">
@@ -588,8 +589,8 @@
                  </div>
                </div>
              </div>
-             </div>
-             <div class="col-lg-4">
+             </div> --}}
+             {{-- <div class="col-lg-4">
               <div class="car-item gray-bg text-center">
                <div class="car-image">
                  <img class="img-fluid" src="images/car/01.jpg" alt="">
@@ -623,8 +624,8 @@
                  </div>
                </div>
              </div>
-             </div>
-             <div class="col-lg-4">
+             </div> --}}
+             {{-- <div class="col-lg-4">
               <div class="car-item gray-bg text-center">
                <div class="car-image">
                  <img class="img-fluid" src="images/car/03.jpg" alt="">
@@ -658,8 +659,8 @@
                  </div>
                </div>
              </div>
-             </div>
-             <div class="col-lg-4">
+             </div> --}}
+             {{-- <div class="col-lg-4">
               <div class="car-item gray-bg text-center">
                <div class="car-image">
                  <img class="img-fluid" src="images/car/02.jpg" alt="">
@@ -693,7 +694,7 @@
                  </div>
                </div>
              </div>
-             </div>
+             </div> --}}
             </div>
             <div class="pagination-nav d-flex justify-content-center">
                  <ul class="pagination">
