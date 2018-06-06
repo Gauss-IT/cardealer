@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddSpeedAccelerationToCars extends Migration
+class AddCo2ToCars extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,7 @@ class AddSpeedAccelerationToCars extends Migration
     public function up()
     {
         Schema::table('cars', function (Blueprint $table) {
-            $table->unsignedInteger('topspeed')->nullable();
-            $table->unsignedInteger('acceleration')->nullable();
+            $table->string('co2')->nullable();
         });
     }
 
@@ -27,8 +26,7 @@ class AddSpeedAccelerationToCars extends Migration
     public function down()
     {
         Schema::table('cars', function (Blueprint $table) {
-            $table->dropIfExists('topspeed');
-            $table->dropIfExists('acceleration');
+            $table->dropColumn('co2');
         });
     }
 }

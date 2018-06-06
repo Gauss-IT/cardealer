@@ -6,49 +6,55 @@
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>Motor Capacity</th>
-            <th>Power</th>
+            <th>Ref Nr</th>
+            <th>Brand</th>
             <th>Model</th>
-            <th>Body Type</th>
-            <th>Gearbox Type</th>
-            <th>CO2 Emmision</th>
-            <th>Top Speed</th>
-            <th>Acceleration</th>
-            <th>Location</th>
-            <th>Color</th>
-            <th>Edit</th>
+            <th>Fuel Type</th>
+            <th>Exterior</th>
+            <th>Interior</th>
+            <th>CO2</th>
+            <th>HP/KW</th>
+            <th>First Registration</th>
+            <th>KMs</th>
+            <th>Price</th>
           </tr>
         </thead>
         <tfoot>
           <tr>
-            <th>Motor Capacity</th>
-            <th>Power</th>
+            <th>Ref Nr</th>
+            <th>Brand</th>
             <th>Model</th>
-            <th>Body Type</th>
-            <th>Gearbox Type</th>
-            <th>CO2 Emmision</th>
-            <th>Top Speed</th>
-            <th>Acceleration</th>
-            <th>Location</th>
-            <th>Color</th>
-            <th>Edit</th>
+            <th>Fuel Type</th>
+            <th>Exterior</th>
+            <th>Interior</th>
+            <th>CO2</th>
+            <th>HP/KW</th>
+            <th>First Registration</th>
+            <th>KMs</th>
+            <th>Price</th>
           </tr>
         </tfoot>
         <tbody>
           @foreach($cars as $c)
             <tr>
-              <td>{{$c->motorcapacity}}</td>
-              <td>{{$c->power}}</td>
+              <td>{{$c->refNr}}</td>
+              <td>{{$c->brand->name}}</td>
               <td>{{$c->model}}</td>
-              <td>{{$c->bodytype}}</td>
-              <td>{{$c->gearboxtype}}</td>
-              <td>{{$c->co2emmision}}</td>
-              <td>{{ isset($c->topspeed) ? $c->topspeed . 'km/h' : 'N/A' }}</td>
-              <td>{{ isset($c->acceleration) ? '0-100 in ' . $c->acceleration . ' sec' : 'N/A' }}</td>
-              <td>{{$c->location}}</td>
-              <td>{{$c->color}}</td>
+              <td>{{$c->fuelType}}</td>
+              <td>{{$c->exterior}}</td>
+              <td>{{$c->interior}}</td>
+              <td>{{$c->co2}}</td>
+              <td>{{$c->hpkw}}</td>
+              <td>{{ isset($c->firstRegistration) ? $c->firstRegistration : '-' }}</td>
+              <td>{{ isset($c->KMs) ? $c->KMs : '-' }}</td>
+              <td>{{$c->price}}</td>
               <td>
                 <a href="{{route('cars.edit', $c->id)}}" class="btn btn-outline-dark btn-sm">Edit</a>
+                <form action="{{route('cars.duplicate', $c->id)}}" method="post">
+                  {{csrf_field()}}
+                  <input type="submit" class="btn btn-outline-dark btn-sm" value="Duplicate">
+                </form>
+                {{-- <a href="{{route('cars.duplicate', $c->id)}}" class="btn btn-outline-dark btn-sm">Duplicate</a> --}}
               </td>
             </tr>
           @endforeach

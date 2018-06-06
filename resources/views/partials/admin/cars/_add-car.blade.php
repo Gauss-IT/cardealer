@@ -8,24 +8,9 @@
     <div class="row">
       <div class="col-md-6 col-sm-12">
         <div class="form-group">
-          <label for="motorCapacity">Motor Capacity</label>
-          <input type="number" name="motorCapacity" class="form-control" id="motorCapacity"
-            aria-describedby="motorCapacity" value="{{ isset($car) ? $car->motorcapacity : '' }}" required>
-        </div>
-        <div class="form-group">
-          <label for="power">Power</label>
-          <input type="number" name="power" class="form-control" id="power"
-            placeholder="Power" value="{{ isset($car) ? $car->power : '' }}" required>
-        </div>
-        <div class="form-group">
-          <label for="topspeed">Top Speed</label>
-          <input type="number" name="topspeed" class="form-control" id="topspeed"
-            aria-describedby="topspeed" value="{{ isset($car) ? $car->topspeed : '' }}">
-        </div>
-        <div class="form-group">
-          <label for="acceleration">Acceleration 0-100km/h</label>
-          <input type="number" name="acceleration" class="form-control" id="acceleration"
-            aria-describedby="acceleration" value="{{ isset($car) ? $car->acceleration : '' }}">
+          <label for="refNr">Ref Nr</label>
+          <input type="number" name="refNr" class="form-control" id="refNr"
+            aria-describedby="refNr" value="{{ isset($car) ? $car->refNr : '' }}" required>
         </div>
         <div class="form-group">
           <div class="input-group mb-3">
@@ -43,41 +28,57 @@
         <div class="form-group">
           <label for="model">Model</label>
           <input type="text" name="model" class="form-control" id="model"
-            value="{{ isset($car) ? $car->model : '' }}" placeholder="Model" required>
+            value="{{ isset($car) ? $car->model : '' }}" placeholder="model" required>
         </div>
         <div class="form-group">
-          <label for="bodyType">Body Type</label>
-          <input type="text" name="bodyType" class="form-control" id="bodyType"
-            value="{{ isset($car) ? $car->bodytype : '' }}" placeholder="bodyType" required>
+          <label for="fuelType">Fuel Type</label>
+          <input type="text" name="fuelType" class="form-control" id="fuelType"
+            value="{{ isset($car) ? $car->fuelType : '' }}" placeholder="Fuel Type" required>
         </div>
         <div class="form-group">
-          <label for="gearboxType">Gearbox Type</label>
-          <input type="text" name="gearboxType" class="form-control" id="gearboxType"
-            value="{{ isset($car) ? $car->gearboxtype : '' }}" placeholder="gearboxType" required>
+          <label for="exterior">Exterior</label>
+          <input type="text" name="exterior" class="form-control" id="exterior"
+            value="{{ isset($car) ? $car->exterior : '' }}" placeholder="exterior" required>
         </div>
         <div class="form-group">
-          <label for="co2emmision">CO2 Emmision</label>
-          <input type="text" name="co2emmision" class="form-control" id="co2emmision"
-            value="{{ isset($car) ? $car->co2emmision : '' }}" placeholder="CO2 Emmision">
+          <label for="interior">Interior</label>
+          <input type="text" name="interior" class="form-control" id="interior"
+            value="{{ isset($car) ? $car->interior : '' }}" placeholder="interior" required>
         </div>
         <div class="form-group">
-          <label for="location">Location</label>
-          <input type="text" name="location" class="form-control" id="location"
-            value="{{ isset($car) ? $car->location : '' }}" placeholder="Location">
-        </div><div class="form-group">
-          <label for="color">Color</label>
-          <input type="text" name="color" class="form-control" id="color"
-            value="{{ isset($car) ? $car->color : '' }}" placeholder="Color">
+          <label for="co2">CO2 Emmision</label>
+          <input type="text" name="co2" class="form-control" id="co2"
+            value="{{ isset($car) ? $car->co2 : '' }}" placeholder="CO2 Emmision">
+        </div>
+        <div class="form-group">
+          <label for="hpkw">HP/KW</label>
+          <input type="text" name="hpkw" class="form-control" id="hpkw"
+            value="{{ isset($car) ? $car->hpkw : '' }}" placeholder="HP/KW">
+        </div>
+        <div class="form-group">
+          <label for="firstRegistration">First Registration</label>
+          <input type="text" name="firstRegistration" class="form-control" id="firstRegistration"
+            value="{{ isset($car) ? $car->firstRegistration : '' }}" placeholder="First Registration">
+        </div>
+        <div class="form-group">
+          <label for="KMs">KMs</label>
+          <input type="text" name="KMs" class="form-control" id="KMs"
+            value="{{ isset($car) ? $car->KMs : '' }}" placeholder="Kilometers">
+        </div>
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input type="text" name="price" class="form-control" id="price"
+            value="{{ isset($car) ? $car->price : '' }}" placeholder="Price">
         </div>
       </div>
       <div class="col-md-6 col-sm-12">
         <div class="form-group">
           <label for="featuredImage">Featured Image</label>
-          <input type="file" name="featuredImage">
+          <input type="file" value="{{ isset($car) ? $car->featuredImage : ''}}" name="featuredImage">
         </div>
         <div class="form-group">
           <label for="file">Gallery Images</label>
-          <input type="file" id="file" name="file[]" multiple />
+          <input type="file" id="file" value="{{ isset($car) ? $car->galleryimages : ''}}" name="file[]" multiple />
         </div>
         <div class="row">
           <div class="col-sm-6 col-md-6 col-lg-6">

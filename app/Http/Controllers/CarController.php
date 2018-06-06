@@ -43,6 +43,32 @@ class CarController extends Controller
       return view('admin.list-cars')->with(compact('cars'));
     }
 
+    public function duplicate($id){
+      $c = Car::find($id);
+      $car = new Car();
+      $car->refNr = $c->refNr;
+      $car->brand_id = $c->brand_id;
+      $car->model = $c->model;
+      $car->fuelType = $c->fuelType;
+      $car->exterior = $c->exterior;
+      $car->co2 = $c->co2;
+      $car->interior = $c->interior;
+      $car->hpkw = $c->hpkw;
+      if($c->firstRegistration)
+        $car->firstRegistration = $c->firstRegistration;
+      if($c->KMs)
+        $car->KMs = $c->KMs;
+      $car->price = $c->price;
+      $car->featuredImage = $c->featuredimage;
+      $car->galleryimages = $c->galleryimages;
+
+      $car->save();
+
+      $cars = Car::all();
+      Session::flash('success', 'Car Duplicated');
+      return view('admin.list-cars')->with(compact('cars'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -62,31 +88,31 @@ class CarController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-          'motorCapacity' => 'required',
-          'power' => 'required',
+          'refNr' => 'required',
           'model' => 'required',
-          'bodyType' => 'required',
-          'gearboxType' => 'required',
-          'co2emmision' => 'required',
-          'location' => 'required',
-          'color' => 'required',
+          'fuelType' => 'required',
+          'exterior' => 'required',
+          'co2' => 'required',
+          'interior' => 'required',
+          'hpkw' => 'required',
+          'price' => 'required',
           'featuredImage' => 'required|image'
         ]);
 
         $car = new Car();
-        $car->motorCapacity = $request->motorCapacity;
-        $car->power = $request->power;
+        $car->refNr = $request->refNr;
         $car->brand_id = $request->brand;
         $car->model = $request->model;
-        if($request->topspeed)
-          $car->topspeed = $request->topspeed;
-        if($request->acceleration)
-          $car->acceleration = $request->acceleration;
-        $car->bodytype = $request->bodyType;
-        $car->gearboxtype = $request->gearboxType;
-        $car->co2emmision = $request->co2emmision;
-        $car->location = $request->location;
-        $car->color = $request->color;
+        $car->fuelType = $request->fuelType;
+        $car->exterior = $request->exterior;
+        $car->co2 = $request->co2;
+        $car->interior = $request->interior;
+        $car->hpkw = $request->hpkw;
+        if($request->firstRegistration)
+          $car->firstRegistration = $request->firstRegistration;
+        if($request->KMs)
+          $car->KMs = $request->KMs;
+        $car->price = $request->price;
         if($request->hasFile('featuredImage')){
           $image = $request->file('featuredImage');
           $filename = time() . '.' . $image->getClientOriginalExtension();
@@ -107,6 +133,8 @@ class CarController extends Controller
             $filename = $gallery_count++ . time() . '.' . $gi->getClientOriginalExtension();
             File::exists(public_path() . '/images/cars/' . $car->id . '/') or
               File::makeDirectory(public_path() . '/images/cars/' . $car->id . '/', 0777, true);
+
+            if(!File::exists)
             $location = public_path('images/cars/' . $car->id . '/' . $filename);
             Image::make($gi)->fit(800, 500)->save($location);
             $gallery_string .= $filename . ';';
@@ -159,31 +187,31 @@ class CarController extends Controller
     public function update(Request $request, $id)
     {
       $this->validate($request, [
-        'motorCapacity' => 'required',
-        'power' => 'required',
+        'refNr' => 'required',
         'model' => 'required',
-        'bodyType' => 'required',
-        'gearboxType' => 'required',
-        'co2emmision' => 'required',
-        'location' => 'required',
-        'color' => 'required',
-        'featuredImage' => 'sometimes|image'
+        'fuelType' => 'required',
+        'exterior' => 'required',
+        'co2' => 'required',
+        'interior' => 'required',
+        'hpkw' => 'required',
+        'price' => 'required',
+        // 'featuredImage' => 'required|image'
       ]);
 
       $car = Car::find($id);
-      $car->motorCapacity = $request->motorCapacity;
-      $car->power = $request->power;
+      $car->refNr = $request->refNr;
       $car->brand_id = $request->brand;
-      if($request->topspeed)
-        $car->topspeed = $request->topspeed;
-      if($request->acceleration)
-        $car->acceleration = $request->acceleration;
       $car->model = $request->model;
-      $car->bodytype = $request->bodyType;
-      $car->gearboxtype = $request->gearboxType;
-      $car->co2emmision = $request->co2emmision;
-      $car->location = $request->location;
-      $car->color = $request->color;
+      $car->fuelType = $request->fuelType;
+      $car->exterior = $request->exterior;
+      $car->co2 = $request->co2;
+      $car->interior = $request->interior;
+      $car->hpkw = $request->hpkw;
+      if($request->firstRegistration)
+        $car->firstRegistration = $request->firstRegistration;
+      if($request->KMs)
+        $car->KMs = $request->KMs;
+      $car->price = $request->price;
       if($request->hasFile('featuredImage')){
         $image = $request->file('featuredImage');
         $filename = time() . '.' . $image->getClientOriginalExtension();
@@ -200,16 +228,17 @@ class CarController extends Controller
 
       if($request->file){
         foreach($request->file as $gi){
+          var_dump($gi);
           $filename = $gallery_count++ . time() . '.' . $gi->getClientOriginalExtension();
           File::exists(public_path() . '/images/cars/' . $car->id . '/') or
-            File::makeDirectory(public_path() . '//images/cars/' . $car->id . '/', 0777, true);
+            File::makeDirectory(public_path() . '/images/cars/' . $car->id . '/', 0777, true);
           $location = public_path('images/cars/' . $car->id . '/' . $filename);
           Image::make($gi)->fit(800, 500)->save($location);
           $gallery_string .= $filename . ';';
         }
+        $car->galleryimages = $gallery_string;
       }
 
-      $car->galleryimages = $gallery_string;
 
       $car->save();
       Session::flash('success', 'This car was successfully updated.');

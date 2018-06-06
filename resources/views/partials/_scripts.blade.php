@@ -15,7 +15,7 @@
 <!-- appear -->
 <script type="text/javascript" src="{{asset('js/jquery.appear.js')}}"></script>
 
-<script type="text/javascript" src="js/isotope/isotope.pkgd.min.js"></script>
+<script type="text/javascript" src="{{asset('js/isotope/isotope.pkgd.min.js')}}"></script>
 
 
 <!-- counter -->
@@ -45,7 +45,7 @@
 <script type="text/javascript" src="{{asset('revolution/js/extensions/revolution.extension.video.min.js')}}"></script>
 
 <!-- custom -->
-<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src="{{asset('js/custom.js')}}"></script>
 
 <script type="text/javascript">
    (function($){

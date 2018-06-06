@@ -1,4 +1,6 @@
-<section id="about" class="section">
+{{$car}}
+
+{{-- <section id="about" class="section">
   <div class="container">
     <div class="section-header">
       <h3 class="section-subtitle wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">{{$car->model}}</h3>
@@ -98,7 +100,7 @@
     <div class="row justify-content-md-center">
       <div class="col-md-10">
         <div class="carousel-slider owl-carousel owl-theme">
-          <?php $first=true; ?>
+          < $first=true; ?>
           @foreach($galleryimages as $gi)
             @if($gi != "")
               <div class="{{$first ? 'item active' : 'item'}}">
@@ -106,7 +108,7 @@
                   <img src="{{asset('images/cars/' . $gi)}}" class="img-fluid" > <!--style="max-height:400px;" -->
                 </div>
               </div>
-              <?php $first = false; ?>
+              < $first = false; ?>
             @endif
           @endforeach
         </div>
@@ -114,4 +116,4 @@
     </div>
   </div>
 
-</section>
+</section> --}}
