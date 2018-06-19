@@ -1,10 +1,15 @@
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="{{route('root.index')}}">Arventa GMBH</a>
-  <button class="navbar-toggler" type="button"
-      data-toggle="collapse" data-target="#navbarTogglerDemo02"
-      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="flex-nav">
+    <a class="navbar-brand" href="{{route('root.index')}}">Arventa GMBH</a>
+    <div class="flex-menu">
+      <button id="menu_button">stocklist</button>
+      <button class="navbar-toggler" type="button"
+          data-toggle="collapse" data-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="list-style: none !important;">

@@ -39,4 +39,5 @@
 <!-- responsive -->
 <link rel="stylesheet" type="text/css" href="{{asset('css/responsive.css')}}" />
 
+<link rel="stylesheet" href="{{asset('css/custom.css')}}">
 </head>

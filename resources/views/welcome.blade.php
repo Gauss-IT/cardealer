@@ -1,7 +1,8 @@
 @extends('layouts.master')
 
 @section('content')
-  @include('partials._rev_slider')
+  {{-- @include('partials._rev_slider') --}}
+  @include('partials._bootstrap_slider')
 
   {{-- @include('partials._welcome') --}}
   @include('partials._counter')

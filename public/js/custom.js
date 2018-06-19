@@ -23,9 +23,9 @@ Design and Developed by: potenzaglobalsolutions.com
 :: Tabs
 :: Accordion
 :: List group item
-:: Slick slider 
+:: Slick slider
 :: Mgnific Popup
-:: PHP contact form 
+:: PHP contact form
 :: Placeholder
 :: Isotope
 :: Scroll to Top
@@ -34,16 +34,16 @@ Design and Developed by: potenzaglobalsolutions.com
 ======================================
 [ End table content ]
 ======================================*/
- 
+
 //POTENZA var
 var POTENZA = {};
- 
+
  (function($){
   "use strict";
 
 /*************************
       Predefined Variables
-*************************/ 
+*************************/
    var $window = $(window),
         $document = $(document),
         $body = $('body'),
@@ -57,7 +57,7 @@ var POTENZA = {};
 
 /*************************
         Preloader
-*************************/  
+*************************/
   POTENZA.preloader = function () {
        $("#load").fadeOut();
        $('#loading').delay(0).fadeOut('slow');
@@ -65,7 +65,7 @@ var POTENZA = {};
 
 /*************************
        Mega menu
-*************************/    
+*************************/
  POTENZA.megaMenu = function () {
     $('#menu').megaMenu({
            // DESKTOP MODE SETTINGS
@@ -97,7 +97,7 @@ var POTENZA = {};
  }
 
 /*************************
-       Search Bar 
+       Search Bar
 *************************/
  POTENZA.searchbar = function () {
       if ($(".search-top").exists()) {
@@ -111,13 +111,13 @@ var POTENZA = {};
              });
       }
  }
- 
+
 /*************************
-       owl carousel 
+       owl carousel
 *************************/
     POTENZA.carousel = function () {
-     
-    
+
+
  $(".owl-carousel").each(function () {
         var $this = $(this),
             $items = ($this.data('items')) ? $this.data('items') : 1,
@@ -125,7 +125,7 @@ var POTENZA = {};
             $navdots = ($this.data('nav-dots')) ? $this.data('nav-dots') : false,
             $navarrow = ($this.data('nav-arrow')) ? $this.data('nav-arrow') : false,
             $autoplay = ($this.attr('data-autoplay')) ? $this.data('autoplay') : true,
-            $space = ($this.attr('data-space')) ? $this.data('space') : 30;     
+            $space = ($this.attr('data-space')) ? $this.data('space') : 30;
             $(this).owlCarousel({
                 loop: $loop,
                 items: $items,
@@ -141,22 +141,22 @@ var POTENZA = {};
                 nav: $navarrow,
                 navText:["<i class='fa fa-angle-left fa-2x'></i>","<i class='fa fa-angle-right fa-2x'></i>"],
                 autoplay: $autoplay,
-                autoplayHoverPause: true   
-            }); 
-           
-    }); 
+                autoplayHoverPause: true
+            });
+
+    });
     }
-    
+
 /*************************
        Counter
-*************************/  
+*************************/
   POTENZA.counters = function () {
           if ($counter.exists()) {
               $counter.each(function () {
-                  var $elem = $(this);                 
+                  var $elem = $(this);
                       $elem.appear(function () {
                           $elem.find('.timer').countTo();
-                      });                  
+                      });
               });
           }
   };
@@ -198,7 +198,7 @@ var POTENZA = {};
  POTENZA.tabs = function () {
        var $tabsdata = $("#tabs li[data-tabs]"),
            $tabscontent = $(".tabcontent"),
-           $tabsnav = $(".tabs li");       
+           $tabsnav = $(".tabs li");
 
       $tabsdata.on('click', function () {
         $(this).parent().parent().find('.active').removeClass('active');
@@ -218,7 +218,7 @@ var POTENZA = {};
       });
       $("li[data-tabs]").each(function() {
          $(this).parent().parent().find('.tabcontent').hide().filter(':first').show();
-       }); 
+       });
    }
 
 /*************************
@@ -226,8 +226,8 @@ var POTENZA = {};
 *************************/
   POTENZA.accordion = function () {
      var   $acpanel = $(".accordion > .accordion-content"),
-           $acsnav = $(".accordion > .accordion-title > a");      
-         
+           $acsnav = $(".accordion > .accordion-title > a");
+
           $acpanel.hide().first().slideDown("easeOutExpo");
           $acsnav.first().addClass("active");
           $acsnav.on('click', function () {
@@ -242,21 +242,21 @@ var POTENZA = {};
 
  /*************************
       List group item
- *************************/   
+ *************************/
   POTENZA.featurelist = function () {
       var $featurenav = $(".list-group-item a");
           $featurenav.on('click', function () {
            if(!($(this).hasClass("current"))){
-               $featurenav.removeClass("current").next("ul").slideUp(); 
+               $featurenav.removeClass("current").next("ul").slideUp();
              }
              $(this).toggleClass("current");
              $(this).next("ul").slideToggle("slow");
              return false;
         });
     }
- 
+
  /*************************
-      Slick slider  
+      Slick slider
 *************************/
   POTENZA.slickslider = function () {
       if ($(".slider-slick").exists()) {
@@ -279,8 +279,8 @@ var POTENZA = {};
 
     /*************************
         NiceScroll
-*************************/ 
-    POTENZA.pniceScroll = function () { 
+*************************/
+    POTENZA.pniceScroll = function () {
     if ($(".scrollbar").exists()) {
         $(".scrollbar").niceScroll({
           scrollspeed: 150,
@@ -298,7 +298,7 @@ var POTENZA = {};
 
 /*************************
        Magnific Popup
-*************************/ 
+*************************/
   POTENZA.mediaPopups = function () {
     if ($(".popup-gallery").exists()) {
           $('.popup-gallery').magnificPopup({
@@ -317,7 +317,7 @@ var POTENZA = {};
                       return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
                   }
              }
-         }); 
+         });
       }
       if ($(".popup-youtube, .popup-vimeo, .popup-gmaps").exists()) {
            $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
@@ -332,7 +332,7 @@ var POTENZA = {};
   }
 
  /*************************
-     PHP contact form 
+     PHP contact form
 *************************/
   POTENZA.contactform = function () {
       $( "#contactform" ).submit(function( event ) {
@@ -345,7 +345,7 @@ var POTENZA = {};
             success:function(response){
               $("#ajaxloader").hide();
               $("#contactform").show();
-              
+
               $("#formmessage").html(response).show().delay(2000).fadeOut('slow');
             }
           });
@@ -355,8 +355,8 @@ var POTENZA = {};
 
 /*************************
         Placeholder
- *************************/ 
-  POTENZA.placeholder = function () {   
+ *************************/
+  POTENZA.placeholder = function () {
        var $placeholder = $('[placeholder]');
            $placeholder.focus(function() {
             var input = $(this);
@@ -386,7 +386,7 @@ var POTENZA = {};
  POTENZA.Isotope = function () {
       var $isotope = $(".isotope"),
           $itemElement = '.grid-item',
-          $filters = $('.isotope-filters');      
+          $filters = $('.isotope-filters');
         if ($isotope.exists()) {
             $isotope.isotope({
             resizable: true,
@@ -394,20 +394,20 @@ var POTENZA = {};
               masonry: {
                 gutterWidth: 10
               }
-            });     
+            });
        $filters.on( 'click', 'button', function() {
          var $val = $(this).attr('data-filter');
-             $isotope.isotope({ filter: $val });       
+             $isotope.isotope({ filter: $val });
              $filters.find('.active').removeClass('active');
              $(this).addClass('active');
-      });     
+      });
     }
  }
 
  // masonry
   POTENZA.masonry = function () {
         var $masonry = $('.masonry-main .masonry'),
-            $itemElement = '.masonry-main .masonry-item'; 
+            $itemElement = '.masonry-main .masonry-item';
             if ($masonry.exists()) {
               $masonry.isotope({
                 resizable: true,
@@ -416,13 +416,13 @@ var POTENZA = {};
                   gutterWidth: 10
                 }
               });
-         }  
+         }
   }
-  
+
 /*************************
       Scroll to Top
 *************************/
-  POTENZA.scrolltotop = function () {  
+  POTENZA.scrolltotop = function () {
       var $scrolltop = $('.car-top');
 
       $scrolltop.on('click', function () {
@@ -433,7 +433,7 @@ var POTENZA = {};
           setTimeout(function(){ $scrolltop.removeClass('car-run');},1000);
           return false;
       });
-      $window.on('scroll', function () {   
+      $window.on('scroll', function () {
           if($window.scrollTop() >= 200) {
               $scrolltop.addClass("show");
               $scrolltop.addClass("car-down");
@@ -447,7 +447,7 @@ var POTENZA = {};
 /*************************
       Scroll to Top
 *************************/
-  POTENZA.sidebarfixed = function () {  
+  POTENZA.sidebarfixed = function () {
  if ($(".listing-sidebar").exists()) {
 	(function() {
 	  var reset_scroll;
@@ -532,7 +532,7 @@ var POTENZA = {};
         POTENZA.accordion(),
         POTENZA.featurelist(),
         POTENZA.slickslider(),
-        POTENZA.pniceScroll(),    
+        POTENZA.pniceScroll(),
         POTENZA.mediaPopups(),
         POTENZA.contactform(),
         POTENZA.placeholder(),
@@ -543,18 +543,18 @@ var POTENZA = {};
 
 })(jQuery);
 
-$( document ).ready(function() {    
+$( document ).ready(function() {
   $.ajax({
     url: 'http://themes.potenzaglobalsolutions.com/top-bar-section.php',
     type: 'post',
-    //dataType: 'json',     
+    //dataType: 'json',
     data:'action=pgs_top_bar&theme=car-dealer',
     success: function(response){
-      $('body').prepend(response);        
+      $('body').prepend(response);
     },
-    
-  });        
+
+  });
 });
 $(document).on('click','a.frame-close', function(e){
-  $('.header-preview').slideUp(); 
+  $('.header-preview').slideUp();
 });
