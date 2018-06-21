@@ -3,9 +3,11 @@
 @section('content')
   {{-- @include('partials._rev_slider') --}}
   @include('partials._bootstrap_slider')
+  {{-- <div class="clearfix h-100" style="display:block; z-index:99999"></div> --}}
 
   {{-- @include('partials._welcome') --}}
   @include('partials._counter')
+  {{-- <div class="clearfix h-100" style="display:block; z-index:99999"></div> --}}
 
   @include('partials._featured_car')
 

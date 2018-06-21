@@ -137,3 +137,30 @@
   background-color: rgb(227, 6, 19);
   color: #fff;
 }
+
+#carouselExampleIndicators img {
+  width:auto;
+  height: 50vh;
+  max-height: 94vh;
+  z-index: -1;
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%,0);
+  pointer-events: none
+}
+
+.main-carousel-container {
+
+}
+
+/* .parallax-slide {
+  max-height:50% !important; */
+  /* width:100%; */
+/* } */
+
+/* .main-carousel-container {
+  display:block;
+  max-height: 90%;
+  width:100%;
+} */
