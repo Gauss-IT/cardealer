@@ -2,7 +2,7 @@
 <!--=================================
  footer -->
 
-<footer class="footer bg-2 bg-overlay-black-90">
+<footer class="footer footer-darkgrey">
   <div class="container">
     <div class="row">
      <div class="col-md-12">
@@ -19,10 +19,10 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-3 col-md-6">
+      <div class="col-lg-3 col-md-6 col-sm-12">
         <div class="about-content">
-          <img class="img-fluid" id="logo-footer" src="{{asset('images/logo-light.png')}}" alt="">
-          <p>We provide everything you need to build an amazing dealership website developed especially for car sellers dealers or auto motor retailers.</p>
+          <p>About Carlink
+Carlink is an international Automotive Company which operates on the European B2B market for new cars, both LHD & RHD.</p>
         </div>
         <div class="address">
           <ul>
@@ -32,58 +32,34 @@
           </ul>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="usefull-link">
-        <h6 class="text-white">Useful Links</h6>
-          <ul>
-            <li><a href="#"><i class="fa fa-angle-double-right"></i> Change Oil and Filter</a></li>
-            <li><a href="#"><i class="fa fa-angle-double-right"></i> Brake Pads Replacement</a></li>
-            <li><a href="#"><i class="fa fa-angle-double-right"></i> Timing Belt Replacement</a></li>
-            <li><a href="#"><i class="fa fa-angle-double-right"></i> Pre-purchase Car Inspection</a></li>
-            <li><a href="#"><i class="fa fa-angle-double-right"></i> Starter Replacement</a></li>
-          </ul>
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        {{-- <div class="usefull-link"> --}}
+        <h6 class="clfooter">Why Carlink</h6>
+        <ul>
+          <li>Best prices</li>
+          <li>No worries</li>
+          <li>The largest network</li>
+          <li>EAIVT Member</li>
+        </ul>
+        {{-- </div> --}}
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <div>
+          <h4 class="clfooter">Carlink International B.V.</h4><br>
+          <p>1019 HC Amsterdam</p><br>
+          <p>The Netherlands</p><br>
+          <p>Email: info@carlink.nl</p><br>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6">
-       <div class="recent-post-block">
-        <h6 class="text-white">recent posts </h6>
-          <div class="recent-post">
-            <div class="recent-post-image">
-              <img class="img-fluid" src="{{asset('images/car/01.jpg')}}" alt="">
-            </div>
-            <div class="recent-post-info">
-                <a href="#">Time to change your </a>
-                <span class="post-date"><i class="fa fa-calendar"></i>September 10, 2017</span>
-            </div>
-         </div>
-         <div class="recent-post">
-            <div class="recent-post-image">
-              <img class="img-fluid" src="{{asset('images/car/02.jpg')}}" alt="">
-            </div>
-            <div class="recent-post-info">
-                <a href="#">The best time to </a>
-                <span class="post-date"><i class="fa fa-calendar"></i>September 10, 2017</span>
-            </div>
-         </div>
-         <div class="recent-post">
-            <div class="recent-post-image">
-              <img class="img-fluid" src="{{asset('images/car/03.jpg')}}" alt="">
-            </div>
-            <div class="recent-post-info">
-                <a href="#">Replacing a timing </a>
-                <span class="post-date"><i class="fa fa-calendar"></i>September 10, 2017</span>
-            </div>
-         </div>
-       </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="news-letter">
-        <h6 class="text-white">subscribe Our Newsletter </h6>
-         <p>Keep up on our always evolving products features and technology. Enter your e-mail and subscribe to our newsletter.</p>
-         <form class="news-letter">
-           <input type="email" placeholder="Enter your Email" class="form-control placeholder">
-           <a class="button red" href="#">Subscribe</a>
-         </form>
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="usefull-link">
+        <h6 class="clfooter">Why Carlink</h6>
+        <ul>
+          <li>Best prices</li>
+          <li>No worries</li>
+          <li>The largest network</li>
+          <li>EAIVT Member</li>
+        </ul>
         </div>
       </div>
     </div>
