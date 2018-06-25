@@ -342,13 +342,110 @@
   margin-top: 0;
 }
 
-/* .parallax-slide {
-  max-height:50% !important; */
-  /* width:100%; */
-/* } */
+.filter {
+  color: #fff;
+  font-family: Montserrat,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+  font-size: .95rem;
+  line-height: 1.9;
+  font-weight: 300;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+}
 
-/* .main-carousel-container {
-  display:block;
-  max-height: 90%;
-  width:100%;
+.f-header {
+  border-radius: .6rem .6rem 0 0;
+  text-align: center;
+  padding: 9px;
+  background-color: #a0a0a0;
+  box-sizing: inherit;
+  display: block;
+  text-transform: uppercase;
+}
+
+.f-body {
+  display: block;
+  padding: 30px;
+  background-color: #252525;
+}
+
+.black-input {
+  margin-bottom: 10%;
+  background: #000!important;
+  color: #fff;
+  background-color: #000!important;
+  width: 100%;
+  font-size: 16px;
+  border: 1px solid #fff!important;
+  height: 41px;
+  border-radius: .6rem;
+  outline: none;
+  padding-left: 20px;
+  padding-right: 28px;
+  touch-action: manipulation;
+  font-family: sans-serif;
+  /* margin: 0; */
+  padding: 1px 0px;
+  padding-left: 20px;
+  -webkit-appearance: textfield;
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  font: 400 13.3333px Arial;
+  -webkit-writing-mode: horizontal-tb !important;
+}
+
+.header-filter {
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #fff;
+
+}
+
+.filter-arrow {
+    max-width: 20px;
+    position: relative;
+    display: block;
+    float: right;
+    top: 8px;
+    right: 12px;
+    vertical-align: middle;
+    border-style: none;
+    text-align: center;
+    transition: all .3s ease-in-out;
+}
+
+/* .filter-arrow:active {
+  transform: rotate(180deg);
+ -webkit-transform: rotate(180deg);
+ -ms-transform: rotate(180deg);
 } */
+
+.filter-btn {
+  margin-bottom: 10%;
+  width:100%;
+}
+
+.model-picker {
+  position: relative;
+  width:100%;
+  display: flex;
+  align-items: space-between;
+  justify-content: space-between;
+}
+
+.model-picker label {
+  color: #fff;
+}

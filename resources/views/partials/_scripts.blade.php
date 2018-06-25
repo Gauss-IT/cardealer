@@ -47,6 +47,18 @@
 <!-- custom -->
 <script type="text/javascript" src="{{asset('js/custom.js')}}"></script>
 
+<script>
+  $(document).ready(function() {
+    $(".filter-arrow").click(function() {
+      $(".f-body").slideToggle();
+      if($(this).css("transform") == "none")
+        $(this).css("transform", "rotate(180deg)");
+      else
+        $(this).css("transform", "");
+    });
+  });
+</script>
+
 <script type="text/javascript">
    (function($){
   "use strict";
