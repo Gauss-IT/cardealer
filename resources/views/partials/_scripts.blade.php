@@ -49,12 +49,38 @@
 
 <script>
   $(document).ready(function() {
+    var filterCol = $("#filter-col");
+    var carCols = $('.car-thumb-col').toArray();
+    console.log(carCols)
+    // console.log(filterCol);
     $(".filter-arrow").click(function() {
       $(".f-body").slideToggle();
-      if($(this).css("transform") == "none")
+      if($(this).css("transform") == "none"){
+        filterCol.detach();
+        filterCol.appendTo("#closed-filter-row");
+        // [].forEach(carCols, function(elem){
+        //   elem.classList.remove('col-lg-3');
+        //   elem.classList.append('col-lg-4')
+        // });
+        for(var i = 0; i<carCols.length; i++){
+          $(carCols[i]).removeClass('col-lg-3');
+          $(carCols[i]).addClass('col-lg-4');
+        }
         $(this).css("transform", "rotate(180deg)");
-      else
+      }
+      else{
         $(this).css("transform", "");
+        filterCol.detach();
+        filterCol.prependTo("#car-row");
+        // [].forEach(carCols, function(elem){
+        //   elem.classList.remove('col-lg-4');
+        //   elem.classList.append('col-lg-3');
+        // });
+        for(var i = 0; i<carCols.length; i++){
+          $(carCols[i]).removeClass('col-lg-4');
+          $(carCols[i]).addClass('col-lg-3');
+        }
+      }
     });
   });
 </script>

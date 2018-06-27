@@ -1,4 +1,29 @@
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About</a>
+  <a href="href="{{route('cars.index')}}"">Cars</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
 <nav class="navbar navbar-dark bg-dark">
+  <div style="width:100%;">
+    <a class="navbar-brand" href="{{route('root.index')}}">Arventa GMBH</a>
+    <span style="font-size:30px;cursor:pointer; float:right;padding-top:0.4%;" onclick="openNav()">&#9776;</span>
+    <button id="menu_button">stocklist</button>
+  </div>
+</nav>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+{{-- <nav class="navbar navbar-dark bg-dark">
   <div class="flex-nav">
     <a class="navbar-brand" href="{{route('root.index')}}">Arventa GMBH</a>
     <div class="flex-menu">
@@ -33,13 +58,13 @@
           @endif
         </a>
       </li>
-    </ul>
+    </ul> --}}
     {{-- <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form> --}}
-  </div>
-</nav>
+  {{-- </div>
+</nav> --}}
 
 {{-- <!--=================================
  mega menu -->

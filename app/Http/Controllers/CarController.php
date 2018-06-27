@@ -157,11 +157,12 @@ class CarController extends Controller
      */
     public function show($id)
     {
-        $car = Car::find($id);
-        $galleryimages = [];
-        if(isset($car->galleryimages))
-          $galleryimages = explode(';', $car->galleryimages);
-        return view('cars.show')->with(compact('car', 'galleryimages'));
+        return view('car.car');
+        // $car = Car::find($id);
+        // $galleryimages = [];
+        // if(isset($car->galleryimages))
+        //   $galleryimages = explode(';', $car->galleryimages);
+        // return view('cars.show')->with(compact('car', 'galleryimages'));
     }
 
     /**
