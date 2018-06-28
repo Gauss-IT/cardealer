@@ -1,9 +1,9 @@
 <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">About</a>
-  <a href="href="{{route('cars.index')}}"">Cars</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times; close</a>
+  <a class="menu-link" href="#">About</a>
+  <a class="menu-link" href="{{route('cars.index')}}">Cars</a>
+  <a class="menu-link" href="#">Clients</a>
+  <a class="menu-link" href="#">Contact</a>
 </div>
 <nav class="navbar navbar-dark bg-dark">
   <div style="width:100%;">

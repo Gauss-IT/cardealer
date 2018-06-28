@@ -19,3 +19,18 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+<div id="carousel-status" class="carousel-static row spacing-top">
+  <div class="col-xs-3 col-md-3 sm-spacing">
+    <img src="{{asset('images/car/car_slider_thumb1.jpg')}}" alt="" class="d-block w-100">
+  </div>
+  <div class="col-xs-3 col-md-3 sm-spacing">
+    <img src="{{asset('images/car/car_slider_thumb2.jpg')}}" alt="" class="d-block w-100">
+  </div>
+  <div class="col-xs-3 col-md-3 sm-spacing">
+    <img src="{{asset('images/car/car_slider_thumb3.jpg')}}" alt="" class="d-block w-100">
+  </div>
+  <div class="col-xs-3 col-md-3 sm-spacing">
+    <img src="{{asset('images/car/car_slider_thumb4.jpg')}}" alt="" class="d-block w-100">
+  </div>
+</div>
