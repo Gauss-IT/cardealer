@@ -8,8 +8,11 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9">
         @include('partials._single_car_carousel')
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+          @include('partials._car_summary')
       </div>
     </div>
   </div>
