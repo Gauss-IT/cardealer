@@ -1,5 +1,5 @@
 <?php
-
+$aa="aaaa";
 $DATABASE_URL=parse_url('postgres://javekdewirnlrq:e9a1fa6c0ecec9eb02fe9edc2c5ed38bb1f677b5b41670973f700ad56756aadb@ec2-23-21-246-25.compute-1.amazonaws.com:5432/d26m518jc7b8n6
 ');
 
