@@ -4,7 +4,7 @@ $DATABASE_URL=parse_url('postgres://javekdewirnlrq:e9a1fa6c0ecec9eb02fe9edc2c5ed
 $host = $DATABASE_URL["host"];
 $username = $DATABASE_URL["user"];
 $password = $DATABASE_URL["pass"];
-$database = substr($DATABASE_URL["path", 1]);
+$database = substr($DATABASE_URL["path"], 1);
 return [
 
     /*
