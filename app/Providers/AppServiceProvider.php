@@ -14,6 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $url->formatScheme('https');
         Schema::defaultStringLength(191);
     }
 
@@ -24,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+      $this->app['request']->server->set('HTTPS', true);
         //
     }
 }
