@@ -647,3 +647,190 @@ a.div-a {
   height: auto !important;
   max-height: 80% !important; */
 }
+
+
+.green-savings {
+    border-radius: .6rem;
+    width: 100%;
+    margin: 50px 0 20px;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: #6c0;
+    color: #fff;
+    top: 0;
+    left: 10px;
+    padding: 6px 15px;
+    display: block;
+    font-family: Montserrat,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+}
+
+.red-inv-button {
+  padding: 10px 40px;
+  font-weight: 300;
+  border-radius: .6rem;
+  font-family: Montserrat,sans-serif;
+  text-transform: uppercase;
+  padding: 8px 23px;
+  font-size: 17px;
+  background-color: red;
+  color: #fff!important;
+  border: 0!important;
+  width: 100%;
+  padding-left: 10px!important;
+  padding-right: 10px!important;
+  text-align: center;
+  display: inline-block;
+  line-height: 1.25;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.summary-highlights-header {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  line-height: 21px;
+  font-family: Montserrat,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+  color: #292b2c;
+  background-color: #fff;
+  display: block;
+}
+
+.car-detail-button-wrapper {
+  margin-top: 30px;
+  display: block;
+  font-weight: 300;
+  font-family: Montserrat,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+  font-size: .95rem;
+  line-height: 0.9;
+  color: #292b2c;
+  background-color: #fff;
+}
+
+.btn-black {
+  width: 100%;
+  margin-bottom: 12px;
+  background-color: #2e2d2c;
+  color: #fff!important;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  border: 0;
+  font-weight: 300;
+  border-radius: .6rem;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  font-family: Montserrat,sans-serif;
+  text-transform: uppercase;
+  display: inline-block;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-black:hover {
+  background-color: #6c0!important;
+}
+
+.horizontal-spacing {
+  margin-top: 5%;
+  margin-bottom:5%;
+}
+
+#full-options {
+  -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-gap: 40px;
+    -moz-column-gap: 40px;
+    column-gap: 40px;
+    display: block;
+    margin-top: 30px;
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 300;
+    font-family: Montserrat,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+    color: #292b2c;
+    background-color: #fff;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.standard-sum {
+    padding-left: 20px;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+
+#special-car-wrapper {
+  background-color: #2e2d2c;
+  color: #fff;
+  margin-top: 45px;
+  padding: 40px 0;
+  text-align: center;
+  display:block;
+  font-weight: 300;
+  font-family: Montserrat,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+  font-size: .95rem;
+  line-height: 1.9;
+}
+
+#special-car-wrapper h4 {
+  font-size: 15px;
+  font-weight: 300;
+  text-transform: none;
+  margin-bottom: .5rem;
+  font-family: inherit;
+  line-height: 1.1;
+  color: inherit;
+  margin-top: 1.5rem;
+  text-align:center;
+  cursor:pointer;
+  
+}
+
+.car-thumbs-wrapper {
+  width: 90%;
+  display:flex;
+  margin:auto;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: space-around;
+}
+
+.special-title {
+  font-weight: 200;
+  font-size: 26px;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  font-family: inherit;
+  line-height: 1.1;
+  color: inherit;
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  margin: auto;
+  margin-bottom: 5%;
+}

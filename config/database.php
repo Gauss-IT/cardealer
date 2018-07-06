@@ -2,10 +2,10 @@
 // $DATABASE_URL=parse_url('postgres://javekdewirnlrq:e9a1fa6c0ecec9eb02fe9edc2c5ed38bb1f677b5b41670973f700ad56756aadb@ec2-23-21-246-25.compute-1.amazonaws.com:5432/d26m518jc7b8n6
 // ');
 $DATABASE_URL=parse_url(getenv("DATABASE_URL"));
-$host = $DATABASE_URL["host"];
-$username = $DATABASE_URL["user"];
-$password = $DATABASE_URL["pass"];
-$database = substr($DATABASE_URL["path"], 1);
+$host = $DATABASE_URL["host"]??null;
+$username = $DATABASE_URL["user"]??null;
+$password = $DATABASE_URL["pass"]??null;
+$database = substr($DATABASE_URL["path"], 1)??null;
 return [
 
     /*
@@ -19,7 +19,7 @@ return [
     |
     */
 
-    'default' => 'pgsql',
+    'default' => 'mysql',
     // 'default' => env('DB_CONNECTION', 'pgsql'),
 
     /*

@@ -10,7 +10,7 @@
     <a class="navbar-brand" style="display: inline;" href="{{route('root.index')}}">
       <img class="nav-logo" src="{{asset('img/1-arventa-web-logo.png')}}" alt="Arventa GMBH"></a>
     <span style="font-size:30px;cursor:pointer; float:right;padding-top:0.5%;" onclick="openNav()">&#9776;</span>
-    <button id="menu_button" class="d-none d-lg-block">stocklist</button>
+    <a href="{{route('cars.index')}}" id="menu_button" class="d-none d-lg-block">stocklist</a>
   </div>
 </nav>
 
