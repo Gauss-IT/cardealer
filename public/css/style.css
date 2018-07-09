@@ -734,7 +734,7 @@ NOTE: This is main stylesheet of template, This file contains the styling for th
      background-size: cover !important;
      position: relative;
      z-index: 0;
-     background-attachment: fixed;
+     /* background-attachment: fixed; */
 }
  .bg-3 {
      background: url(../images/bg/03.jpg);
