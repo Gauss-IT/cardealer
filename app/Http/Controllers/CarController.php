@@ -11,9 +11,113 @@ use App\Brand;
 
 class CarController extends Controller
 {
+    public $username="API74";
+    public $password="API74pass2";
+    public $api_base="http://services.mobile.de/";
+
 
     public function __constructor() {
       $this->middleware('auth', ['only' => ['list', 'store', 'create', 'edit', 'update', 'destroy']]);
+    }
+
+
+    function get_auth_string(){
+        return $this->username.":".$this->password;
+    }
+
+    public function curl_set_options($curl){
+      curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC );
+      curl_setopt($curl, CURLOPT_USERPWD, $this->get_auth_string());
+      curl_setopt($curl, CURLOPT_FAILONERROR, true);
+      curl_setopt($curl, CURLOPT_HEADER, false);
+      curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    }
+
+    public function getAll($customerNumber = 1063) {
+
+
+      $curl = curl_init();
+
+      curl_setopt_array($curl, array(
+        CURLOPT_PROXY => 'http://api.test.sandbox.mobile.de:8080',
+        CURLOPT_URL => "https://services.mobile.de/search-api/search?customerNumber=1063",
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => "",
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 30,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => "GET",
+        CURLOPT_HTTPHEADER => array(
+          "Accept: application/xml",
+          "Accept-Encoding: gzip",
+          "Accept-Language: en",
+          "Authorization: Basic QVBJNzQ6QVBJNzRwYXNzMg==",
+          "Cache-Control: no-cache"
+        ),
+      ));
+
+      $response = curl_exec($curl);
+      $err = curl_error($curl);
+
+      curl_close($curl);
+
+      if ($err) {
+        echo "cURL Error #:" . $err;
+      } else {
+        print_r($response);
+      }
+
+      die();
+
+     // $query = '/search-api/search?customerNumber=' . $customerNumber;
+     //  $ch = curl_init();
+     //  curl_setopt($ch, CURLOPT_URL, $this->api_base . $query);
+     //  curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC );
+     //  curl_setopt($ch, CURLOPT_USERPWD, $this->get_auth_string());
+     //  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+     //  curl_setopt($ch, CURLOPT_PROXY, 'http://api.test.sandbox.mobile.de:8080'); // $proxy is ip of proxy server
+     //  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+     //  curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+     //  curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+     //  curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+     //  $httpCode = curl_getinfo($ch , CURLINFO_HTTP_CODE); // this results 0 every time
+     //  $response = curl_exec($ch);
+     //  if ($response === false) $response = curl_error($ch);
+     //  echo stripslashes($response);
+     //  curl_close($ch);
+     //
+     //  echo "response: ";
+     //  var_dump($response);
+     //  die();
+
+      // $query = '/search-api/search?customerNumber=' . $customerNumber;
+      // $curl = curl_init($this->api_base . $query);
+      // $this->curl_set_options($curl);
+      // echo 'curl_exec: ';
+      // echo curl_exec($curl);
+      // die();
+      // $response = curl_exec($curl);
+      // echo 'response: ' . $response;
+      // die();
+      // $curl_error = curl_error($curl);
+      // curl_close($curl);
+      //
+      // if($curl_error){ /* Error handling goes here */ }
+
+      return $response;
+    }
+
+    public function getAd($ad = 11989) {
+      $query = '/search-api/ad/' . $ad;
+      $curl = curl_init($this->api_base . $query);
+      $this->curl_set_options($curl);
+      $response = curl_exec($curl);
+      $curl_error = curl_error($curl);
+      curl_close($curl);
+
+      if($curl_error){ /* Error handling goes here */ }
+
+      return $response;
     }
 
     /**
@@ -24,7 +128,8 @@ class CarController extends Controller
     public function index()
     {
         $cars = Car::all();
-        return view('cars.stocklist')->with(compact('cars'));
+        $getAll = $this->getAll();
+        return view('cars.stocklist')->with(compact('cars', 'getAll'));
     }
 
     public function indexL2()

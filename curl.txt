@@ -1,0 +1,2 @@
+curl -x http://api.test.sandbox.mobile.de:8080 API74:API74pass2 -L http://services.mobile.de
+curl -H Accept: application/xml -H Accept-Encoding: gzip -H Accept-Language: en -H Authorization: QVBJNzQ=:QVBJNzRwYXNzMg==
