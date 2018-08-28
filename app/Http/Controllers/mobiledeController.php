@@ -6,6 +6,14 @@ use Illuminate\Http\Request;
 
 class mobiledeController extends Controller
 {
+
+  public function getAll(){
+
+  }
+
+  public function getAd() {
+    
+  }
     /**
      * Display a listing of the resource.
      *
